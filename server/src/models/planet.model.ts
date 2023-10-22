@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import { parse } from "csv-parse";
 import { Planet } from "../types/planet.type";
 
@@ -16,8 +17,10 @@ function isHabitablePlanet(planet: Planet) {
 }
 
 export async function loadHabitablePlanets(): Promise<Planet[]> {
+  const csvFilePath = path.join(__dirname, "../../data/kepler_data.csv");
+
   return new Promise((resolve, reject) => {
-    fs.createReadStream("kepler_data.csv")
+    fs.createReadStream(csvFilePath)
       .pipe(
         parse({
           comment: "#",

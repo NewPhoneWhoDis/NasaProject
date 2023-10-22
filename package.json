@@ -1,0 +1,25 @@
+{
+  "name": "nasaproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run start --prefix server",
+    "client": "npm run start --prefix client",
+    "watch": "npm run server & npm run client",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm install-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewPhoneWhoDis/NasaProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NewPhoneWhoDis/NasaProject/issues"
+  },
+  "homepage": "https://github.com/NewPhoneWhoDis/NasaProject#readme"
+}

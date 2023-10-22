@@ -20,7 +20,9 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@types/csv-parse": "^1.2.2",
     "cors": "^2.8.5",
+    "csv-parse": "^5.5.2",
     "express": "^4.18.2"
   }
 }

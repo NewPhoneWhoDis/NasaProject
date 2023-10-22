@@ -1,4 +1,4 @@
-type Planet = {
+export type Planet = {
   name: string;
   diameter: number;
   population: number;

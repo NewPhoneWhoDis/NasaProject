@@ -1,11 +1,19 @@
 import fs from "fs";
 import path from "path";
 import { parse } from "csv-parse";
-import { Planet } from "../types/planet.type";
+export interface IPlanet {
+  name: string;
+  diameter: number;
+  population: number;
+  kepler_name?: string;
+  koi_disposition?: string;
+  koi_insol?: number;
+  koi_prad?: number;
+}
 
-const habitablePlanets: Planet[] = [];
+const habitablePlanets: IPlanet[] = [];
 
-function isHabitablePlanet(planet: Planet) {
+function isHabitablePlanet(planet: IPlanet) {
   return (
     planet.koi_disposition === "CONFIRMED" &&
     planet.koi_insol !== undefined &&
@@ -16,7 +24,7 @@ function isHabitablePlanet(planet: Planet) {
   );
 }
 
-export async function loadHabitablePlanets(): Promise<Planet[]> {
+export async function loadHabitablePlanets(): Promise<IPlanet[]> {
   const csvFilePath = path.join(__dirname, "../../data/kepler_data.csv");
 
   return new Promise((resolve, reject) => {

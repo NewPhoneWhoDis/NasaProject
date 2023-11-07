@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { loadHabitablePlanets } from "../models/planet.model";
-import { Planet } from "../types/planet.type";
+import { IPlanet } from "../models/planet.model";
 
-export let cachedPlanets: Planet[] | null = null;
+export let cachedPlanets: IPlanet[] | null = null;
 
 export async function loadPlanetsMiddleware(
   req: Request,

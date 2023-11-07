@@ -8,3 +8,7 @@ export interface ILaunch {
   upcoming: boolean;
   success: boolean;
 }
+
+export function launch() {
+  return;
+}
